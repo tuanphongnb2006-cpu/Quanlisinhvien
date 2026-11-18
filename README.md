@@ -7,7 +7,7 @@
 * Sinh viên :
 * 
 ## II PHÂN CÔNG NHIỆM VỤ
-| STT | Thành viên | Vai trò chính | Giao diện phụ trách | Trọng tâm kỹ thuật & Nhiệm vụ đảm nhiệm |
+| STT | Thành viên | Vai trò chính | Giao diện phụ trách | 
 | :---: | :--- | :---: | :--- | :--- |
 | **1** | **Phạm Tuấn Phong***(Nhóm trưởng)* |  |  ||
 | **2** | **Lê Trí Thành** | |  |  |
