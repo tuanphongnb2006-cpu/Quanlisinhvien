@@ -1,81 +1,13 @@
-
-<h1 align="center">🎓 QUẢN LÝ SINH VIÊN EPU</h1>
-
-<h3 align="center">STUDENT MANAGEMENT SYSTEM</h3>
-
-<p align="center">
-  DỰ ÁN MÔN LẬP TRÌNH .NET
-</p>
-
-<hr>
-
-<table>
-<tr>
-<td align="center" width="50%">
-
-### 📌 GIỚI THIỆU ĐỀ TÀI
-
-**Tên đề tài:** Quản lý sinh viên EPU
-
-**Môn học:** Lập trình .NET
-
-**Khoa:** Công nghệ thông tin
-
-**Trường:** Đại học Điện Lực
-
-**Lớp:** D19CNPM3
-
-</td>
-<td align="center" width="50%">
-
-### 💻 CÔNG NGHỆ SỬ DỤNG
-
-- C#
-- .NET Windows Forms
-- SQL Server
-- Visual Studio
-- GitHub
-
-</td>
-</tr>
-
-<tr>
-<td align="center">
-
-### ⚙️ CHỨC NĂNG CHÍNH
-
-- Quản lý sinh viên
-- Quản lý lớp học
-- Quản lý môn học
-- Quản lý đăng ký học
-- Quản lý điểm
-- Thống kê kết quả
-
-</td>
-<td align="center">
-
-### 👥 THÀNH VIÊN NHÓM
-
-- Phạm Tuấn Phong
-- Lê Trí Thành
-- Phạm Hoàng Anh
-
-</td>
-</tr>
-</table>
-
-<hr>
-
-<h2 align="center">📋 PHÂN CÔNG NHIỆM VỤ</h2>
-
-| STT | Thành viên | Vai trò |
-|:---:|---|---|
-| 1 | Phạm Tuấn Phong | Nhóm trưởng |
-| 2 | Lê Trí Thành | Thành viên |
-| 3 | Phạm Hoàng Anh | Thành viên |
+# XÂY DỰNG HỆ THỐNG QUẢN LÝ SINH VIÊN EPU 
+## I GIỚI THIỆU ĐỀ TÀI * Học phần : lập trình  .NET 
+* Khoa : Công nghệ thông tin - Trường Đại học Điện Lực(EPU)
+* Lớp : D19CNPM3
+* Đề tài : Xây dựng hệ thông quản lý sinh viên EPU
+## II PHÂN CÔNG NHIỆM VỤ 
+| STT | Thành viên | Vai trò chính | Giao diện phụ trách | Trọng tâm kỹ thuật & Nhiệm vụ đảm nhiệm |
+| :---: | :--- | :---: | :--- | :--- |
+| **1** | **Lê Thị Thúy Hiền**<br>*(Nhóm trưởng)* | **Team Leader & Core Architecture<br>(Database & Socket Architect)** | 1. **`FormServerDashboard`** *(NOC Server)*<br>2. **`Form1`** *(Khung Kiosk ATM)*<br>3. **`UcScreenLogin`** *(Đăng nhập Thẻ & PIN)* | • **Lập trình Mạng Socket TCP thuần (`Bank.Server\Program.cs` & `AtmClientSocket.cs`):** Lắng nghe cổng 8888, xử lý kết nối đa luồng bất đồng bộ (`Task.Run` ThreadPool), xây dựng bộ giải mã gói tin `ProcessCommand`.<br>• **Bộ não Quản lý Trạm (`AtmManager.cs`):** Cơ chế nhịp tim **Heartbeat 4s & Watchdog 10s qua Socket**, tự động phục hồi kết nối (Auto-reconnect).<br>• **Cơ sở Dữ liệu & Tầng Nghiệp vụ (`BankATM_DB.sql` & `DatabaseHelper.cs`):** Thiết kế 8 bảng chuẩn 3NF, xử lý đăng nhập, tự động khóa thẻ sau 3 lần sai PIN.<br>• **Khóa Concurrency CSDL:** Áp dụng `WITH (UPDLOCK, ROWLOCK)` và `SqlTransaction` chống rút lố tiền (Race Condition).<br>• Điều phối tiến độ, quản lý mã nguồn GitHub và chuẩn bị kịch bản bảo vệ đồ án. |
+| **2** | **Nguyễn Minh Đức** | **Core Transactions & Business Logic Developer** | 1. **`UcScreenMenu`** *(Menu tính năng & Số dư)*<br>2. **`UcScreenWithdraw`** *(Rút tiền mặt)*<br>3. **`UcScreenTransfer`** *(Chuyển khoản 24/7)* | • **Nghiệp vụ Rút tiền ATM (`UcScreenWithdraw`):** Xây dựng các nút mệnh giá nhanh (100k - 5M) và ô nhập tiền lẻ tùy chọn, kiểm tra bội số tiền mặt, trừ tiền tài khoản & trừ quỹ tiền mặt khay máy.<br>• **Nghiệp vụ Chuyển khoản 24/7 (`UcScreenTransfer`):** Tự động tra cứu và hiển thị tên người thụ hưởng theo số tài khoản, kiểm tra tính hợp lệ và xác nhận chuyển tiền.<br>• **Màn hình Menu (`UcScreenMenu`):** Hiển thị lời chào, số dư khả dụng và điều hướng nghiệp vụ.<br>• **Kiểm thử Đa máy (Multi-device Testing):** Phối hợp cùng Hiền chạy thực nghiệm máy khách kết nối qua Socket (LAN / Radmin VPN) kiểm tra tải đồng thời. |
+| **3** | **Vũ Bình An** | **Account Management & Reporting / UI-UX Developer** | 1. **`UcScreenHistory`** *(Lịch sử giao dịch)*<br>2. **`UcScreenChangePin`** *(Đổi mã PIN thẻ)*<br>3. **`FormReceipt`** *(In biên lai sao kê nhiệt)* | • **Quản trị Lịch sử Giao dịch (`UcScreenHistory`):** Truy vấn và hiển thị 5 giao dịch gần nhất từ CSDL, phân loại màu sắc dòng tiền trực quan (`+` màu xanh tiền vào, `-` màu đỏ tiền ra).<br>• **Nghiệp vụ Đổi mã PIN (`UcScreenChangePin`):** Xác thực mã PIN cũ, kiểm tra ràng buộc 6 số, xác nhận khớp mã PIN mới.<br>• **Module In Biên lai Nhiệt (`FormReceipt.cs`):** Thiết kế giao diện giấy in nhiệt ATM, sinh mã giao dịch `TXN`, mã vạch Barcode và hàm xuất file `.txt` tự động mở bằng Notepad.<br>• **Chuẩn hóa Đa màn hình (`DpiUnaware`):** Tối ưu cấu hình hiển thị, đảm bảo giao diện sắc nét, chuẩn 100% không bị vỡ font giữa các máy tính. |
 
 ---
-
-<p align="center">
-  ⭐ STUDENT MANAGEMENT SYSTEM - EPU ⭐
-</p>
