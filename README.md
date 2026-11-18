@@ -7,8 +7,6 @@
   ## II PHÂN CÔNG NHIỆM VỤ
   | STT | Thành viên | Vai trò | Giao diện phụ trách |
   
-  | :---: | :--- | :---: | :--- | :--- |
-  
   | 1 | Phạm Tuấn Phong (Nhóm trưởng)|           |             |
   
   | 2 | Lê Trí Thành |          |                |
