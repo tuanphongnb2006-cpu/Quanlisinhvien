@@ -4,6 +4,8 @@
 * Khoa : Công nghệ thông tin - Trường Đại học Điện Lực(EPU)
 * Lớp : D19CNPM3
 * Đề tài : Xây dựng hệ thông quản lý sinh viên EPU
+* Sinh viên :
+* 
 ## II PHÂN CÔNG NHIỆM VỤ
 | STT | Thành viên | Vai trò chính | Giao diện phụ trách | Trọng tâm kỹ thuật & Nhiệm vụ đảm nhiệm |
 | :---: | :--- | :---: | :--- | :--- |
