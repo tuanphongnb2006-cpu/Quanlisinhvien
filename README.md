@@ -9,8 +9,8 @@
 ## II PHÂN CÔNG NHIỆM VỤ
 | STT | Thành viên | Vai trò chính | Giao diện phụ trách | công cụ |
 | :---: | :--- | :---: | :--- | :--- |
-| **1** | **Phạm Tuấn Phong***(Nhóm trưởng)* |  |  ||
-| **2** | **Lê Trí Thành** | |  |  |
+| **1** | **Lê Trí Thành***(Nhóm trưởng)* |  |  ||
+| **2** | **Phạm Tuấn Phong** | |  |  |
 | **3** | **Phạm Hoàng Anh** | ||  |
 
 ---
